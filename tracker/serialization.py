@@ -17,6 +17,8 @@ class BaseSerialization:
     def deserializer(cls, data):
         return cls._model(**data)
 
+
+
 class StateSerializer(BaseSerialization):
     
     _model = State
