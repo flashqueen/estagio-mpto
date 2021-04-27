@@ -10,10 +10,14 @@ POST {{baseURL}}/api/states
 Content-Type: application/json
 
 {
-    "name": "Ceara",
-    "abbreviation": "CE"
+    "name": "Piaui",
+    "abbreviation": "PI"
 }
 
 ###
 # @name getOne
 GET {{baseURL}}/api/states/2
+
+###
+# @name deleteOne
+DELETE {{baseURL}}/api/states/4
