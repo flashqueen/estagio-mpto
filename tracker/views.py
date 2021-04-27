@@ -6,6 +6,8 @@ from django.db import transaction
 from .models import State
 from .serialization import StateSerializer
 
+
+
 def state_list(request):
     query = State.objects.all()
     response = HttpResponse()
@@ -51,6 +53,7 @@ def state_create(request):
     return response
 
 
+
 def state_get_by_pk(request, pk):
     status  = 200
     result = {}
@@ -71,6 +74,8 @@ def state_get_by_pk(request, pk):
         content_type='application/json',
         content=json.dumps(result)
     )
+
+
 
 def state_delete_by_pk(request, pk):
     status  = 200
@@ -98,6 +103,8 @@ def state_delete_by_pk(request, pk):
         content_type='application/json',
         content=json.dumps(result) if result else ''
     )
+
+
 
 def state_update_by_pk(request, pk):
     status  = 200
@@ -131,6 +138,8 @@ def state_update_by_pk(request, pk):
         content=json.dumps(result) if result else ''
     )
 
+
+
 def state_index(request):
     response = None
     if request.method == 'GET':
@@ -141,6 +150,8 @@ def state_index(request):
 
 
     return response
+
+
 
 def state_by_pk(request, pk):
     if request.method == 'GET':
