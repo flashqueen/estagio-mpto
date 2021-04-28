@@ -2,9 +2,10 @@ import json
 
 from django.http.response import HttpResponse
 from django.db import transaction
+from helpers import restfy
 
 from .models import State
-from .serialization import StateSerializer
+from .serialization import StateSerializer, CitySerializer
 
 
 
@@ -163,3 +164,5 @@ def state_by_pk(request, pk):
     else:
 
         return HttpResponse(status=501)
+
+city_index, city_by_id = restfy.make_rest(CitySerializer)
