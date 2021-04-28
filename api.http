@@ -15,15 +15,15 @@ Content-Type: application/json
 }
 
 ###
-# @name getOne
+# @name getOneState
 GET {{baseURL}}/api/states/6
 
 ###
-# @name deleteOne
+# @name deleteOneState
 DELETE {{baseURL}}/api/states/4
 
 ###
-# @name updateState
+# @name updateOneState
 PUT {{baseURL}}/api/states/5
 Content-Type: application/json
 
@@ -31,3 +31,34 @@ Content-Type: application/json
     "name": "PIAUI",
     "abbreviation": "PI"
 }
+
+###
+# @name allCities
+Get {{baseURL}}/api/cities
+
+###
+# @name createCity
+POST {{baseURL}}/api/cities
+Content-Type: application/json
+
+{
+    "name": "Aparecida",
+    "state_id": 6
+}
+
+###
+# @name getOneCity
+GET {{baseURL}}/api/cities/2
+
+###
+# @name updateOneCity
+PUT {{baseURL}}/api/cities/2
+Content-Type: application/json
+
+{
+    "name": "Aparecida do Goias"
+}
+
+###
+# @name deleteOneCity
+DELETE {{baseURL}}/api/cities/2
