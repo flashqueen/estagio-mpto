@@ -17,4 +17,17 @@ class City(models.Model):
 
     def __str__(self):
         return f'{self.name}/{self.state.abbreviation}'
-    
+
+
+
+class Person(models.Model):
+
+    class Meta:
+        abstract = True
+
+class NaturalPerson(Person):
+    pass
+
+class LegalPerson(Person):
+    pass
+
