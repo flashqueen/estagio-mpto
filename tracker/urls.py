@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import (
     state_index,
-    state_by_pk,
+    state_by_id,
     city_index,
     city_by_id
 )
@@ -9,7 +9,7 @@ from .views import (
 
 urlpatterns = [  
     path('states', state_index),
-    path('states/<int:pk>', state_by_pk),
+    path('states/<int:id>', state_by_id),
     path('cities', city_index),
     path('cities/<int:id>', city_by_id),
  ]
