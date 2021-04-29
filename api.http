@@ -10,13 +10,13 @@ POST {{baseURL}}/api/states
 Content-Type: application/json
 
 {
-    "name": "Goias",
-    "abbreviation": "GO"
+    "name": "Distrito Federal",
+    "abbreviation": "DF"
 }
 
 ###
 # @name getOneState
-GET {{baseURL}}/api/states/6
+GET {{baseURL}}/api/states/7
 
 ###
 # @name deleteOneState
@@ -34,7 +34,7 @@ Content-Type: application/json
 
 ###
 # @name allCities
-Get {{baseURL}}/api/cities
+Get {{baseURL}}/api/cities?filters=[{"property: "state__id", "value": 5, "stage": 1}]
 
 ###
 # @name createCity
