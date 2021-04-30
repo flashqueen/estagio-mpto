@@ -1,0 +1,33 @@
+@baseURL = http://127.0.0.1:8000
+
+###
+# @name allStates
+Get {{baseURL}}/api/states
+
+###
+# @name createState
+POST {{baseURL}}/api/states
+Content-Type: application/json
+
+{
+    "name": "Sao Paulo",
+    "abbreviation": "SP"
+}
+
+###
+# @name getOneState
+GET {{baseURL}}/api/states/8
+
+###
+# @name deleteOneState
+DELETE {{baseURL}}/api/states/8
+
+###
+# @name updateOneState
+PUT {{baseURL}}/api/states/8
+Content-Type: application/json
+
+{
+    "name": "Sampas",
+    "abbreviation": "SA"
+}
