@@ -148,8 +148,6 @@ def make_rest(Serializer):
                     )
             else:
                 response.status_code = 404
-
-            return response
         except Exception as e:
             response = HttpResponse(
                 status = 400,
@@ -158,6 +156,8 @@ def make_rest(Serializer):
                     'message': str(e)
                 })
             )
+            
+        return response
 
     def _create(request):
         response = None

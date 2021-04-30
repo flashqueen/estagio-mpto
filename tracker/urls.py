@@ -3,11 +3,15 @@ from .views import (
     state_index,
     state_by_id,
     city_index,
-    city_by_id
+    city_by_id,
+    natural_person_index,
+    natural_person_by_id
 )
 
 
 urlpatterns = [  
+    path('natural-person', natural_person_index),
+    path('natural-person/<int:id>', natural_person_by_id),
     path('states', state_index),
     path('states/<int:id>', state_by_id),
     path('cities', city_index),

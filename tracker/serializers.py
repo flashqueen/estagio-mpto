@@ -1,5 +1,5 @@
 from helpers.serializer import BaseSerializer
-from .models import State, City
+from .models import Person, State, City, NaturalPerson
 
 
 
@@ -33,3 +33,15 @@ class CitySerializer(BaseSerializer):
             state=StateSerializer.encode(instance.state)
         )
         return result
+
+
+
+class PersonSerializer(BaseSerializer):
+    
+    _model = Person
+
+
+
+class  NaturalPersonSerializer(PersonSerializer):
+
+    _model = NaturalPerson

@@ -1,0 +1,37 @@
+@baseURL = http://127.0.0.1:8000
+
+@resource = natural-person
+
+###
+# @name all
+Get {{baseURL}}/api/{{resource}}
+
+###
+# @name create
+POST {{baseURL}}/api/{{resource}}
+Content-Type: application/json
+
+{
+    "name": "Fernando",
+    "cpf": "40492345323",
+    "city_id": 1
+}
+
+###
+# @name getOne
+GET {{baseURL}}/api/{{resource}}/1
+
+###
+# @name updateOne
+PUT {{baseURL}}/api/{{resource}}/1
+Content-Type: application/json
+
+{
+    "name": "Fernando",
+    "cpf": "40492345323",
+    "city_id": 1
+}
+
+###
+# @name deleteOne
+DELETE {{baseURL}}/api/{{resource}}/2
