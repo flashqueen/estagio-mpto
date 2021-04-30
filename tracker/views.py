@@ -1,5 +1,5 @@
 from helpers import restfy
-from .serialization import StateSerializer, CitySerializer
+from .serializers import StateSerializer, CitySerializer
 
 
 
