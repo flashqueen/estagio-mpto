@@ -25,8 +25,12 @@ class Person(models.Model):
     class Meta:
         abstract = True
 
+
+
 class NaturalPerson(Person):
     pass
+
+
 
 class LegalPerson(Person):
     pass
