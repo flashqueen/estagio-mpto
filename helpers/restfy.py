@@ -169,6 +169,7 @@ def make_rest(Serializer):
                 instance.save()
 
                 response = HttpResponse(
+                    content_type="application/json",
                     content=json.dumps(
                         Serializer.encode(instance)
                     ),
