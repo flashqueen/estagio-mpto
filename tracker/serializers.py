@@ -1,5 +1,5 @@
 from helpers.serializer import BaseSerializer
-from .models import Person, State, City, NaturalPerson
+from .models import LegalPerson, Person, State, City, NaturalPerson
 
 
 
@@ -40,8 +40,43 @@ class PersonSerializer(BaseSerializer):
     
     _model = Person
 
+    @classmethod
+    def encode(cls, instance):
+        result = super().encode(instance)
+
+        result.update(
+            name=instance.name
+        )
+
+        return result
+
 
 
 class  NaturalPersonSerializer(PersonSerializer):
 
     _model = NaturalPerson
+
+    @classmethod
+    def encode(cls, instance):
+        result = super().encode(instance)
+
+        result.update(
+            cpf=instance.cpf
+        )
+
+        return result
+
+class LegalPersonSerializer(PersonSerializer):
+
+    _model = LegalPerson
+
+    @classmethod
+    def encode(cls, instance):
+        result = super().encode(instance)
+
+        result.update(
+            cnpj=instance.cnpj,
+            fantasy_name=instance.fantasy_name
+        )
+
+        return result
