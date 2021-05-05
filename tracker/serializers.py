@@ -45,7 +45,8 @@ class PersonSerializer(BaseSerializer):
         result = super().encode(instance)
 
         result.update(
-            name=instance.name
+            name=instance.name,
+            city=CitySerializer.encode(instance.city)
         )
 
         return result

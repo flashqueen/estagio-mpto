@@ -7,11 +7,15 @@ from .views import (
     natural_person_index,
     natural_person_by_id,
     legal_person_index,
-    legal_person_by_id
+    legal_person_by_id,
+    person_index,
+    person_by_id
 )
 
 
 urlpatterns = [  
+    path('person', person_index),
+    path('person/<int:id>', person_by_id),
     path('legal-person', legal_person_index),
     path('legal-person/<int:id>', legal_person_by_id),
     path('natural-person', natural_person_index),
