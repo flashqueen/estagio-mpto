@@ -19,12 +19,12 @@ Content-Type: application/json
 
 ###
 # @name getOne
-GET {{baseURL}}/api/{{resource}}/2
+GET {{baseURL}}/api/{{resource}}/5
 
 
 ###
 # @name update
-PUT {{baseURL}}/api/{{resource}}/1
+PUT {{baseURL}}/api/{{resource}}/4
 Content-Type: application/json
 
 {
@@ -36,14 +36,14 @@ Content-Type: application/json
 DELETE {{baseURL}}/api/{{resource}}/1 
 
 ###
-# @name RegisterLog
-POST {{baseURL}}/api/{{resource}}/4343eb93/log
+# @name registerLog
+POST {{baseURL}}/api/{{resource}}/1903b8f9/log
 Content-Type: application/json
 
 {
-    "city_id": 3
+    "city_id": 2
 }
 
 ###
-# @name ListLog
-GET {{baseURL}}/api/{{resource}}/4343eb93/log
+# @name listLog
+GET {{baseURL}}/api/{{resource}}/1903b8f9/log
