@@ -9,11 +9,15 @@ from .views import (
     legal_person_index,
     legal_person_by_id,
     person_index,
-    person_by_id
+    person_by_id,
+    package_container_index,
+    package_container_by_id
 )
 
 
 urlpatterns = [  
+    path('packages', package_container_index),
+    path('packages/<int:id>', package_container_by_id),
     path('person', person_index),
     path('person/<int:id>', person_by_id),
     path('legal-person', legal_person_index),
