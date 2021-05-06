@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import (
+    package_container_log_trace,
     state_index,
     state_by_id,
     city_index,
@@ -18,6 +19,7 @@ from .views import (
 urlpatterns = [  
     path('packages', package_container_index),
     path('packages/<int:id>', package_container_by_id),
+    path('packages/<str:unique_identify>/log', package_container_log_trace),
     path('person', person_index),
     path('person/<int:id>', person_by_id),
     path('legal-person', legal_person_index),

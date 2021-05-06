@@ -10,8 +10,8 @@ POST {{baseURL}}/api/cities
 Content-Type: application/json
 
 {
-    "name": "Aparecida",
-    "state_id": 1
+    "name": "Gurupi",
+    "state_id": 2
 }
 
 ###
