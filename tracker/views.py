@@ -4,11 +4,15 @@ from .serializers import (
     PersonSerializer,
     CitySerializer,
     NaturalPersonSerializer,
-    LegalPersonSerializer
+    LegalPersonSerializer,
+    PackageContainerSerializer
 )
 
 
-
+(
+    package_container_index, 
+    package_container_by_id
+) = restfy.make_rest(PackageContainerSerializer)
 person_index, person_by_id = restfy.make_rest(
     PersonSerializer,
     allow_create=False,
