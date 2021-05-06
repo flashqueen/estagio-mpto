@@ -66,7 +66,33 @@ def package_container_log_trace_register(request, unique_identify):
 
 
 def package_container_log_trace_list(request, unique_identify):
-    return HttpResponse (status=501)
+    status = 501
+    content = None
+    try:
+        package = PackageContainer.objects.get(unique_identify=unique_identify)
+        
+        status=200
+        content = json.dumps({
+            'package': PackageContainerSerializer.encode(package),
+            'log_traces': [LogTraceSerializer.encode(log) for log in package.logs.all()]
+        })
+    except PackageContainer.DoesNotExist:
+       status = 404
+       content = json.dumps({
+           "message": "Pacote nao encontrado"
+       })
+    except Exception as e:
+        status = 400
+        content = json.dumps({
+            "message": str(e)
+        })
+    
+    
+    return HttpResponse (
+        status=status,
+        content=content,
+        content_type='application/json'
+    )
 
 
 
