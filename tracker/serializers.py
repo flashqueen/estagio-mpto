@@ -1,5 +1,6 @@
 from helpers.serializer import BaseSerializer
 from .models import (
+    LogTrace,
     LegalPerson,
     Person,
     State,
@@ -112,6 +113,23 @@ class PackageContainerSerializer(BaseSerializer):
             unique_identify=instance.unique_identify,
             delivery_state=instance.delivery_state,
             delivery_state_display=instance.get_delivery_state_display()
+        )
+
+        return result
+
+
+
+class LogTraceSerializer(BaseSerializer):
+
+    _model = LogTrace
+
+    @classmethod
+    def encode(cls, instance):
+        result = super().encode(instance)
+
+        result.update(
+            city=CitySerializer.encode(instance.city),
+            when=str(instance.when)
         )
 
         return result

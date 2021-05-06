@@ -106,3 +106,18 @@ class PackageContainer(models.Model):
             self.unique_identify = self._generate_unique_identify()
 
         super().save(*args, **kwargs)
+
+
+
+class LogTrace(models.Model):
+    package_container = models.ForeignKey(
+        PackageContainer,
+        related_name='logs',
+        on_delete=PackageContainer
+    )
+    city = models.ForeignKey(
+        City,
+        related_name='+',
+        on_delete=City
+    )
+    when = models.DateTimeField(auto_now_add=True)

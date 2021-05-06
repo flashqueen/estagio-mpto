@@ -19,18 +19,31 @@ Content-Type: application/json
 
 ###
 # @name getOne
-GET {{baseURL}}/api/{{resource}}/3
+GET {{baseURL}}/api/{{resource}}/2
 
 
 ###
 # @name update
-PUT {{baseURL}}/api/{{resource}}/3
+PUT {{baseURL}}/api/{{resource}}/1
 Content-Type: application/json
 
 {
-    "delivery_state": 1
+    "delivery_state": 2
 }
 
 ###
 # @name deleteOne
 DELETE {{baseURL}}/api/{{resource}}/1 
+
+###
+# @name RegisterLog
+POST {{baseURL}}/api/{{resource}}/4343eb93/log
+Content-Type: application/json
+
+{
+    "city_id": 3
+}
+
+###
+# @name ListLog
+GET {{baseURL}}/api/{{resource}}/4343eb93/log
