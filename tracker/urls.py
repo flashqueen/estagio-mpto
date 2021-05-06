@@ -12,11 +12,15 @@ from .views import (
     person_index,
     person_by_id,
     package_container_index,
-    package_container_by_id
+    package_container_by_id,
+    log_trace_index,
+    log_trace_by_id
 )
 
 
 urlpatterns = [  
+    path('log-traces', log_trace_index),
+    path('log-traces/<int:id>', log_trace_by_id),
     path('packages', package_container_index),
     path('packages/<int:id>', package_container_by_id),
     path('packages/<str:unique_identify>/log', package_container_log_trace),

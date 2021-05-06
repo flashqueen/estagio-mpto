@@ -14,6 +14,11 @@ from .serializers import (
 )
 
 
+
+log_trace_index, log_trace_by_id = restfy.make_rest(LogTraceSerializer)
+
+
+
 (
     package_container_index, 
     package_container_by_id

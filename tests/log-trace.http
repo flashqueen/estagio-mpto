@@ -1,0 +1,34 @@
+@baseURL = http://127.0.0.1:8000
+
+@resource = log-traces
+
+###
+# @name all
+Get {{baseURL}}/api/{{resource}}
+
+###
+# @name create
+POST {{baseURL}}/api/{{resource}}
+Content-Type: application/json
+
+{
+    "package_container_id": 2,
+    "city_id": 3
+}
+
+###
+# @name getOne
+GET {{baseURL}}/api/{{resource}}/6
+
+###
+# @name updateOne
+PUT {{baseURL}}/api/{{resource}}/6
+Content-Type: application/json
+
+{
+    "city_id": 4
+}
+
+###
+# @name deleteOne
+DELETE {{baseURL}}/api/{{resource}}/6
