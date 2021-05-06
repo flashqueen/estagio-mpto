@@ -125,7 +125,7 @@ class LogTrace(models.Model):
             self.package_container.delivery_state = 1
         elif self.city == self.package_container.destination_city:
             self.package_container.delivery_state = 3
-        else
+        else:
             self.package_container.delivery_state = 2
 
         super().save(*args, **kwargs)
