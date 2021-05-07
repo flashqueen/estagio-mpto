@@ -18,6 +18,7 @@ from .views import (
 )
 
 
+
 urlpatterns = [  
     path('log-traces', log_trace_index),
     path('log-traces/<int:id>', log_trace_by_id),
